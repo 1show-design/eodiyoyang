@@ -9,6 +9,14 @@
 <meta property="og:description" content="발걸음은 자주, 돌봄은 함께. 자주 찾아뵐 수 있는 동네에서 — 전남광주 구별 요양병원 정보. 직접 묻고 확인한 정보만 싣습니다.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7VFDRTMLX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q7VFDRTMLX');
+</script>
 <style>
   :root{
     --bg:#FAF6EC; --card:#FFFEFA; --ink:#2A241A; --sub:#8A7D68;
@@ -604,7 +612,9 @@ function submitConsult(){
   var name = document.getElementById('q-name').value || '-';
   var phone = document.getElementById('q-phone').value || '-';
   var msg = '[어디요양 상담요청] 지역:' + pick('#q-region') + ' / 상태:' + pick('#q-status') + ' / 간병:' + pick('#q-care') + ' / ' + name + ' ' + phone;
-  // 테스트: 접수 번호 확정 전 — 확정 후 아래 번호 교체
+  if(typeof gtag === 'function'){
+    gtag('event', 'consult_submit', { regions: pick('#q-region'), status: pick('#q-status'), care: pick('#q-care') });
+  }
   location.href = 'sms:01055189632?body=' + encodeURIComponent(msg);
 }
 function toggle(btn, id){
@@ -613,8 +623,23 @@ function toggle(btn, id){
   body.classList.toggle('show', !isOpen);
   btn.classList.toggle('open', !isOpen);
 }
+// 병원별·버튼별 클릭 계측 (개인정보 미포함)
+document.addEventListener('click', function(e){
+  var a = e.target.closest ? e.target.closest('a.btn, a.cta-main, a.cta-sub, .gu-nav a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var card = a.closest('.card, .heilen-card');
+  var nameEl = card ? card.querySelector('.h-name') : null;
+  var hosp = nameEl ? nameEl.textContent.trim() : '공통';
+  var href = a.getAttribute('href') || '';
+  var action = href.indexOf('tel:') === 0 ? 'call_click'
+             : href.indexOf('inpock') > -1 ? 'detail_click'
+             : href.indexOf('naver') > -1 ? 'place_click'
+             : 'nav_click';
+  gtag('event', action, { hospital: hosp, link_label: a.textContent.trim(), link_url: href });
+});
 </script>
 </body>
 </html>
+
 
 
