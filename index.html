@@ -506,6 +506,623 @@
       <div class="btn-row">
         <a class="btn btn-call" href="tel:062-439-1000">전화 문의</a>
         <a class="btn btn-place" href="https://naver.me/G7VuDuwM" target="_blank">네이버에서 보기</a>
+        <a class="btn btn-place" href="https://link.inpock.co.kr/heilen" target="_blank">병원 안내 페이지</a>
+      </div>
+      <div class="heilen-note">위의 지역별 병원에 문의하셨더라도, 환자분이 암 치료 중이라면 이곳에서 다시 안내받으실 수 있습니다 — 어디요양이 지역 안내와 별도로 전남광주 전체에서 연결하는 암 회복 트랙입니다.</div>
+    </div>
+  </div>
+
+  <!-- 모아서 상담 -->
+  <div class="consult-sec" id="consult">
+    <div class="consult-card">
+      <div style="text-align:center;margin-bottom:4px;"><svg viewBox="0 0 30 30" width="34" height="34" style="flex:none;margin-right:2px;"><defs><filter id="mb"><feGaussianBlur stdDeviation="0.7"/></filter></defs><g filter="url(#mb)"><rect x="4" y="9" width="22" height="15" rx="2" fill="#E8DFC4" stroke="#B99A5B" stroke-width="1.2"/><path d="M4 10 L15 19 L26 10" fill="none" stroke="#B99A5B" stroke-width="1.4"/><circle cx="24" cy="7" r="2" fill="#C9766B" opacity=".85"/></g></svg></div><h2>모아서 상담 요청</h2>
+      <p class="lead">병원마다 따로 전화하기 어려우시면, 한 번만 남겨주세요.<br>
+      보호자님이 <b>선택하신 병원에서</b> 직접 연락드립니다.</p>
+
+      <label class="f-label">1. 어느 지역이 편하세요? (여러 개 가능)</label>
+      <div class="opt-grid" id="q-region">
+        <label class="opt"><input type="checkbox" value="광산구"><span>광산구</span></label>
+        <label class="opt"><input type="checkbox" value="남구"><span>남구</span></label>
+        <label class="opt"><input type="checkbox" value="동구"><span>동구</span></label>
+        <label class="opt"><input type="checkbox" value="북구"><span>북구</span></label>
+        <label class="opt"><input type="checkbox" value="서구"><span>서구</span></label>
+        <label class="opt"><input type="checkbox" value="지역무관"><span>지역 무관</span></label>
+      </div>
+
+      <label class="f-label">2. 어르신 상태에 가까운 것은? (여러 개 가능)</label>
+      <div class="opt-grid" id="q-status">
+        <label class="opt"><input type="checkbox" value="치매·파킨슨"><span>치매·파킨슨</span></label>
+        <label class="opt"><input type="checkbox" value="뇌졸중·거동불편"><span>뇌졸중·거동 불편</span></label>
+        <label class="opt"><input type="checkbox" value="수술 후 회복"><span>수술 후 회복</span></label>
+        <label class="opt"><input type="checkbox" value="암 치료 중·후"><span>암 치료 중·후</span></label>
+        <label class="opt"><input type="checkbox" value="기타"><span>기타·잘 모름</span></label>
+      </div>
+
+      <label class="f-label">3. 간병은 어떻게 생각하세요?</label>
+      <div class="opt-grid" id="q-care">
+        <label class="opt"><input type="radio" name="care" value="가족 상주"><span>가족이 함께</span></label>
+        <label class="opt"><input type="radio" name="care" value="공동간병"><span>공동간병 필요</span></label>
+        <label class="opt"><input type="radio" name="care" value="개인간병"><span>개인간병 필요</span></label>
+        <label class="opt"><input type="radio" name="care" value="모름"><span>상담하며 결정</span></label>
+      </div>
+
+      <label class="f-label">4. 연락받으실 정보</label>
+      <input class="f-input" id="q-name" type="text" placeholder="성함 (보호자)" style="margin-bottom:8px;">
+      <input class="f-input" id="q-phone" type="tel" placeholder="연락처 (예: 010-1234-5678)">
+
+      <label class="agree"><input type="checkbox" id="agree1">
+        <span>개인정보(성함·연락처·상태 정보) 수집·이용에 동의합니다. 상담 연결 목적으로만 사용하며 완료 후 파기합니다.</span></label>
+      <label class="agree"><input type="checkbox" id="agree2">
+        <span>위 조건에 맞는 <b>어디요양 게재 병원</b>에 연락처가 전달되어, 해당 병원에서 직접 연락하는 것에 동의합니다.</span></label>
+
+      <button class="consult-submit" onclick="submitConsult()">상담 요청 남기기</button>
+      <p class="consult-note">어디요양은 상담을 대행하거나 병원을 대신 결정하지 않습니다.<br>
+      전달 대가를 받지 않으며, 병원 선택과 입원 결정은 보호자님의 몫입니다.<br>
+      <span class="todo">제출 버튼을 누르면 문자앱이 열리고, 접수 번호(010-5518-9632)로 내용이 전송됩니다.</span></p>
+    </div>
+  </div>
+
+  <!-- 브랜드 스토리 -->
+  <div class="quote-band">
+    <p class="story-head">발걸음은 자주, 돌봄은 함께</p>
+    <p class="story-body">농부의 발소리를 듣고 곡식이 자란다는 옛말이 있습니다.<br>
+    부모님도 정원과 같아서, 자주 들여다보는 눈길이 가장 좋은 거름입니다.<br>
+    그래서 좋은 요양병원의 첫 번째 조건은 <b>자주 찾아뵐 수 있는 거리</b> —<br>
+    어디요양이 사는 동네에서부터 찾는 이유입니다.</p>
+    <p class="story-foot">오늘의 걸음이 부모님의 계절을 가꿉니다.<br>가까운 곳에서, 자주 뵈세요.</p>
+  </div>
+
+  <!-- 준비 중 지역 -->
+  <div class="coming">
+    <h3>다음 지역을 준비하고 있습니다</h3>
+    <span class="city">목포시</span><span class="city">여수시</span><span class="city">순천시</span><span class="city">광양시</span><span class="city">나주시</span>
+  </div>
+
+  <footer>
+    <b>어디요양은 의료기관이 아니며</b>, 지역 요양병원의 사실 정보 제공을 목적으로 합니다.<br>
+    입원 문의와 결정은 보호자님이 각 병원과 직접 진행하십니다.<br>
+    병원 정보 게재는 월 정액 운영 방식이며 문의·입원 건수와 무관합니다.<br>
+    추천·순위 없이 사실 정보만, 구 이름 가나다순으로 게재합니다.<br>
+    병원 정보 출처: 건강보험심사평가원 공개자료 · 각 병원 공식 안내·회신 (게재 전 병원 검수 예정)<br>
+    정보 기준일: 2026-07-15
+    <div class="foot-brand">어디요양 | 전남광주 · 목포 · 여수 · 순천 · 광양 · 나주로 이어집니다</div>
+  </footer>
+
+</div>
+
+<script>
+function submitConsult(){
+  if(!document.getElementById('agree1').checked || !document.getElementById('agree2').checked){
+    document.getElementById('agree1').focus();
+    alert('두 가지 동의 항목을 확인해 주세요.');
+    return;
+  }
+  var pick = function(sel){
+    return Array.from(document.querySelectorAll(sel + ' input:checked')).map(function(i){return i.value;}).join(',') || '-';
+  };
+  var name = document.getElementById('q-name').value || '-';
+  var phone = document.getElementById('q-phone').value || '-';
+  var msg = '[어디요양 상담요청] 지역:' + pick('#q-region') + ' / 상태:' + pick('#q-status') + ' / 간병:' + pick('#q-care') + ' / ' + name + ' ' + phone;
+  // 테스트: 접수 번호 확정 전 — 확정 후 아래 번호 교체
+  location.href = 'sms:01055189632?body=' + encodeURIComponent(msg);
+}
+function toggle(btn, id){
+  var body = document.getElementById(id);
+  var isOpen = body.classList.contains('show');
+  body.classList.toggle('show', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>어디요양 | 전남광주 — 우리 동네 요양병원 정보</title>
+<meta name="description" content="발걸음은 자주, 돌봄은 함께. 어디요양은 지역별 요양병원의 사실 정보를 한 곳에 모아, 보호자가 직접 확인하고 연락할 수 있도록 돕는 정보 안내 서비스입니다.">
+<meta property="og:title" content="어디요양 | 전남광주 — 우리 동네 요양병원 정보">
+<meta property="og:description" content="발걸음은 자주, 돌봄은 함께. 자주 찾아뵐 수 있는 동네에서 — 전남광주 구별 요양병원 정보. 직접 묻고 확인한 정보만 싣습니다.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<style>
+  :root{
+    --bg:#FAF6EC; --card:#FFFEFA; --ink:#2A241A; --sub:#8A7D68;
+    --brand:#8F7434; --brand-soft:#F4ECDA; --line:#E7DCC4;
+    --accent:#9A6A2B; --accent-soft:#F6EDDC; --dim:#AC9F87;
+    --heilen:#7A5C2E; --heilen-soft:#F7F0E2;
+    --gold:#B99A5B; --goldline:#E0D2AF; --goldtext:#8F7434;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:#EDE4D0 !important; 
+    font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:440px;margin:12px auto 26px;padding:0 18px 50px;
+    background:#FBF7EC;border:1px solid #E0D5B8;border-radius:6px;
+    box-shadow:0 2px 14px rgba(120,100,60,.08);}
+  .test-ribbon{
+    background:#3A342C;color:#F5EFE5;text-align:center;
+    font-size:12.5px;padding:8px 12px;letter-spacing:.02em;
+  }
+  .test-ribbon b{color:#FFD98E;}
+  header{padding:34px 0 8px;text-align:center;}
+  .logo{
+    display:inline-flex;align-items:baseline;gap:8px;
+    font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--brand);
+  }
+  .logo .region{
+    font-size:16px;font-weight:600;color:var(--sub);
+    border-left:2px solid var(--line);padding-left:10px;
+  }
+  .catch{margin-top:13px;font-size:19px;font-weight:800;line-height:1.45;letter-spacing:-.01em;}
+  .intro{margin-top:9px;font-size:13.5px;color:var(--sub);line-height:1.7;}
+  .intro b{color:#4A4339;}
+  .not-medical{
+    margin:15px auto 0;display:inline-block;
+    background:var(--brand-soft);color:var(--brand);
+    font-size:12.5px;font-weight:600;padding:7px 14px;border-radius:20px;
+  }
+  .gu-nav{
+    display:flex;gap:7px;justify-content:center;flex-wrap:wrap;
+    margin:20px 0 4px;
+  }
+  .gu-nav a{
+    text-decoration:none;font-size:13.5px;font-weight:700;color:var(--brand);
+    background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:6px 13px;
+  }
+  .gu-nav a.heilen-chip{color:var(--heilen);border-color:#E2D5BC;background:var(--heilen-soft);}
+  .pinned{margin:20px 0 6px;display:grid;gap:10px;}
+  .pin-btn{
+    display:flex;align-items:center;gap:10px;width:100%;
+    background:var(--card);border:1.5px solid var(--line);border-radius:14px;
+    padding:15px 16px;font-size:15px;font-weight:700;color:var(--ink);
+    cursor:pointer;text-align:left;font-family:inherit;
+  }
+  .pin-btn .arrow{margin-left:auto;color:var(--dim);font-weight:400;transition:transform .2s;}
+  .pin-btn.open .arrow{transform:rotate(90deg);}
+  .pin-body{
+    display:none;background:#FFFDF9;border:1.5px solid var(--line);border-top:none;
+    border-radius:0 0 14px 14px;margin-top:-12px;padding:18px 16px 16px;
+    font-size:14.5px;color:#4A4339;
+  }
+  .pin-body.show{display:block;}
+  .pin-body h4{font-size:14.5px;margin:12px 0 4px;color:var(--brand);}
+  .pin-body h4:first-child{margin-top:0;}
+  .pin-body p{margin-bottom:8px;}
+  .gu{margin-top:32px;scroll-margin-top:16px;}
+  .gu-head{
+    display:flex;align-items:baseline;gap:8px;
+    border-bottom:2px solid var(--brand);padding-bottom:7px;margin-bottom:13px;
+  }
+  .gu-name{font-size:18.5px;font-weight:800;color:var(--brand);}
+  .gu-desc{font-size:12.5px;color:var(--sub);}
+  .card{
+    background:var(--card);border:1.5px solid var(--line);border-radius:16px;
+    padding:18px 16px 14px;margin-bottom:12px;
+  }
+  .h-name{font-size:17.5px;font-weight:800;}
+  .h-addr{margin-top:3px;font-size:12.5px;color:var(--dim);}
+  .h-meta{margin-top:8px;font-size:14px;color:#4A4339;line-height:1.7;}
+  .h-meta .chip{
+    display:inline-block;background:#F4EFE7;border-radius:6px;
+    padding:1px 7px;margin:2px 3px 2px 0;font-size:13px;color:#5A5245;
+  }
+  .todo{
+    display:inline-block;background:var(--accent-soft);color:var(--accent);
+    font-size:12.5px;font-weight:700;padding:1px 8px;border-radius:6px;
+  }
+  .btn-row{display:flex;gap:9px;margin-top:13px;}
+  .btn{
+    flex:1;text-align:center;padding:13px 0;border-radius:11px;
+    font-size:15px;font-weight:700;text-decoration:none;
+  }
+  .btn-call{background:var(--brand);color:#fff;}
+  .btn-place{background:#fff;color:var(--brand);border:1.5px solid var(--brand);}
+  .card.pending{background:#F7F3EC;border-style:dashed;}
+  .pending-label{
+    font-size:12px;font-weight:700;color:var(--dim);letter-spacing:.04em;margin-bottom:4px;
+  }
+  /* 하일렌 특별 섹션 */
+  .heilen-sec{margin-top:40px;scroll-margin-top:16px;}
+  .heilen-head{
+    text-align:center;margin-bottom:14px;
+  }
+  .heilen-head h2{font-size:18px;font-weight:800;color:var(--heilen);}
+  .heilen-head p{margin-top:5px;font-size:13px;color:var(--sub);line-height:1.65;}
+  .heilen-card{
+    background:linear-gradient(180deg,#FFFDF8, #FBF6EA);
+    border:2px solid #D9C79F;border-radius:18px;
+    padding:20px 17px 15px;
+  }
+  .heilen-card .h-name{color:var(--heilen);font-size:18px;}
+  .heilen-card .chip{background:#F1E8D2;color:#6B5423;}
+  .heilen-card .btn-call{background:var(--heilen);}
+  .heilen-card .btn-place{color:var(--heilen);border-color:var(--heilen);}
+  .heilen-note{
+    margin-top:11px;font-size:12.5px;color:#8A7347;line-height:1.6;
+    border-top:1px dashed #D9C79F;padding-top:9px;
+  }
+  /* 모아서 상담 */
+  .consult-sec{margin-top:40px;scroll-margin-top:16px;}
+  .consult-card{background:var(--card);border:2px solid var(--brand);border-radius:18px;padding:20px 17px;}
+  .consult-card h2{font-size:18px;font-weight:800;color:var(--brand);text-align:center;}
+  .consult-card .lead{margin-top:6px;font-size:13px;color:var(--sub);text-align:center;line-height:1.65;}
+  .f-label{display:block;font-size:13.5px;font-weight:700;margin:16px 0 7px;color:#4A4339;}
+  .opt-grid{display:flex;flex-wrap:wrap;gap:7px;}
+  .opt{position:relative;}
+  .opt input{position:absolute;opacity:0;pointer-events:none;}
+  .opt span{
+    display:inline-block;padding:8px 13px;border-radius:18px;border:1.5px solid var(--line);
+    background:#fff;font-size:13.5px;font-weight:600;color:#5A5245;cursor:pointer;
+  }
+  .opt input:checked + span{background:var(--brand);border-color:var(--brand);color:#fff;}
+  .f-input{
+    width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:11px;
+    font-size:15px;font-family:inherit;background:#fff;color:var(--ink);
+  }
+  .agree{display:flex;gap:9px;align-items:flex-start;margin-top:10px;font-size:12.5px;color:#5A5245;line-height:1.6;}
+  .agree input{margin-top:3px;width:16px;height:16px;flex:none;}
+  .consult-submit{
+    display:block;width:100%;margin-top:16px;padding:15px 0;border:none;border-radius:12px;
+    background:var(--brand);color:#fff;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;
+  }
+  .consult-note{margin-top:11px;font-size:12px;color:var(--dim);line-height:1.65;text-align:center;}
+  .quote-band{margin-top:36px;text-align:center;padding:26px 18px;background:var(--brand-soft);border-radius:16px;}
+  .coming{margin-top:22px;background:#F4EFE7;border-radius:16px;padding:18px 16px;text-align:center;}
+  .coming h3{font-size:14.5px;font-weight:800;color:#5A5245;margin-bottom:9px;}
+  .coming .city{
+    display:inline-block;background:#fff;border:1.5px dashed var(--line);border-radius:16px;
+    padding:5px 13px;margin:3px 2px;font-size:13px;color:var(--dim);font-weight:600;
+  }
+  footer{
+    margin-top:38px;border-top:1.5px solid var(--line);padding-top:20px;
+    font-size:12.5px;color:var(--sub);line-height:1.75;
+  }
+  footer b{color:#4A4339;}
+  .foot-brand{margin-top:14px;font-weight:800;color:var(--brand);font-size:14px;}
+
+  /* 히어로 (v7 공통) */
+  .hero{padding:36px 0 26px;text-align:center;}
+  .h1{font-size:25px;font-weight:800;line-height:1.4;letter-spacing:-.02em;margin-top:16px;}
+  .hero-sub{margin-top:10px;font-size:14.5px;color:var(--sub);line-height:1.65;}
+  .hero-cta{display:grid;gap:9px;margin-top:18px;}
+  .cta-main{
+    display:block;padding:16px 0;border-radius:13px;background:var(--brand);color:#fff;
+    font-size:16.5px;font-weight:800;text-decoration:none;
+  }
+  .cta-sub{
+    display:block;padding:14px 0;border-radius:13px;background:#fff;color:var(--brand);
+    border:1.5px solid var(--brand);font-size:15px;font-weight:700;text-decoration:none;
+  }
+  .trust-row{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:13px;}
+  .trust-row span{font-size:12px;font-weight:600;color:var(--sub);background:var(--brand-soft);padding:5px 10px;border-radius:14px;}
+  .story-head{font-size:19px;font-weight:800;color:var(--brand);}
+  .story-body{margin-top:10px;font-size:13.5px;color:#4A4339;line-height:1.8;}
+  .story-foot{margin-top:12px;font-size:13.5px;font-weight:700;color:var(--brand);line-height:1.7;}
+
+  .hero{padding:44px 0 30px;}
+  .hero .logo{color:#2A241A;font-size:32px;}
+  .hero .logo .region{color:#8F7434;border-left-color:#D9C79B;}
+  .hero .h1{color:#2A241A;margin-top:18px;}
+  .hero .h1::before{content:"";display:block;width:44px;height:1px;background:#B99A5B;margin:0 auto 18px;}
+  .hero-sub{color:#8A7D68;}
+  .cta-sub{background:transparent;color:#8F7434;border:1px solid #B99A5B;}
+  .trust-row span{background:transparent;}
+
+  /* ---- 럭셔리 공통 ---- */
+  .h1,.story-head,.gu-name,.h-name,.heilen-head h2,.consult-card h2{
+    font-family:'Noto Serif KR','Nanum Myeongjo','AppleMyungjo',Georgia,serif;
+    letter-spacing:.01em;
+  }
+  .h1{font-size:26px;font-weight:700;line-height:1.5;}
+  .logo{font-family:'Noto Serif KR','Nanum Myeongjo',serif;font-weight:700;}
+  .card{border:1px solid var(--goldline);border-radius:14px;padding:22px 18px 16px;}
+  .card.pending{border:1px dashed var(--goldline);}
+  .gu-head{border-bottom:1px solid var(--gold);padding-bottom:9px;}
+  .gu-desc{letter-spacing:.14em;text-transform:uppercase;font-size:11px;}
+  .h-meta .chip{background:transparent;border:1px solid var(--goldline);color:var(--goldtext);border-radius:4px;}
+  .cta-main{
+    background:linear-gradient(135deg,#C7A85C 0%,#E7D194 45%,#B08D46 100%);
+    color:#33270F;box-shadow:0 5px 14px rgba(140,110,50,.30);
+  }
+  .btn-call{background:linear-gradient(135deg,#C7A85C,#DFC685,#B08D46);color:#33270F;}
+  .btn-place{color:var(--goldtext);border:1px solid var(--gold);background:transparent;}
+  .consult-submit{background:linear-gradient(135deg,#C7A85C,#E7D194,#B08D46);color:#33270F;}
+  .consult-card{border:1px solid var(--gold);}
+  .opt input:checked + span{background:#33270F;border-color:#33270F;color:#E7D194;}
+  .trust-row span{background:transparent;border:1px solid var(--goldline);color:var(--goldtext);}
+  .gu-nav a{border:1px solid var(--goldline);color:var(--goldtext);background:transparent;}
+  .gu-nav a.heilen-chip{background:transparent;}
+  .quote-band{background:transparent;border-top:1px solid var(--goldline);border-bottom:1px solid var(--goldline);border-radius:0;}
+  .coming{background:transparent;border:1px dashed var(--goldline);}
+  .coming .city{border:1px dashed var(--goldline);background:transparent;}
+  .pin-btn{border:1px solid var(--goldline);}
+  .pin-body{border:1px solid var(--goldline);border-top:none;}
+  .heilen-card{border:1px solid var(--gold);background:linear-gradient(180deg,#FFFDF6,#FAF3E2);}
+  footer{border-top:1px solid var(--goldline);}
+
+  .art-hero{padding-top:20px;}
+  .art-frame{
+    border:1px solid #E0D3AF;border-radius:4px;overflow:hidden;
+    box-shadow:inset 0 0 0 6px #FBF7EC, 0 2px 10px rgba(120,100,60,.10);
+    margin-bottom:20px;background:#FBF7EC;
+  }
+  .art-hero .h1::before{display:none;}
+  .art-hero .h1{margin-top:12px;}
+  .test-ribbon{border-radius:0;}
+
+  /* ==== 전체 수채화 ==== */
+  body{
+    background:
+      radial-gradient(55% 26% at 12% 0%, rgba(143,179,207,.22), transparent 62%),
+      radial-gradient(45% 22% at 92% 4%, rgba(217,182,92,.16), transparent 60%),
+      radial-gradient(65% 36% at 50% 102%, rgba(168,195,138,.24), transparent 66%),
+      #EFE6D1 !important;
+  }
+  .gu-head{
+    border-bottom:none;padding-bottom:13px;align-items:center;gap:9px;
+    background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 12" preserveAspectRatio="none"><path d="M3 7 C 45 3, 90 10, 130 6 S 195 4, 217 7" stroke="%23A8C39A" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.75"/><path d="M8 9 C 60 6, 120 11, 214 8" stroke="%23D9B65C" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.7"/></svg>') no-repeat bottom left / 100% 11px;
+  }
+  .gu-name{color:#3C5232;}
+  .card,.card.pending{
+    border:none;background:#FFFEF8;
+    border-radius:15px 19px 14px 20px / 18px 14px 19px 15px;
+    box-shadow:0 0 0 1px rgba(176,152,102,.28), 0 3px 10px rgba(120,100,60,.07);
+  }
+  .card.pending{background:#FBF5E6;box-shadow:0 0 0 1px rgba(176,152,102,.20) inset, 0 0 0 1px rgba(176,152,102,.18);}
+  .h-meta .chip{
+    background:rgba(168,195,138,.28);border:none;color:#4F6440;
+    border-radius:8px 11px 8px 12px;padding:2px 9px;
+  }
+  .heilen-card .chip{background:rgba(217,182,92,.25);color:#7A5C2E;}
+  .todo{background:rgba(201,118,107,.18);color:#A0523F;border-radius:9px 12px 9px 12px;}
+  .btn-call,.cta-main,.consult-submit{
+    background:radial-gradient(130% 130% at 22% 18%, #7FA167 0%, #5E7D4E 58%, #4A6840 100%) !important;
+    color:#FBF7EC !important;border-radius:12px 15px 12px 16px;box-shadow:0 4px 12px rgba(94,125,78,.30) !important;
+  }
+  .btn-place,.cta-sub{
+    background:rgba(143,179,207,.16) !important;color:#3E5E7E !important;border:none !important;
+    border-radius:14px 11px 15px 11px;box-shadow:0 0 0 1px rgba(94,133,166,.35);
+  }
+  .heilen-card .btn-call{background:radial-gradient(130% 130% at 22% 18%, #D9B65C 0%, #BE9A48 60%, #A5842F 100%) !important;color:#33270F !important;}
+  .heilen-card .btn-place{color:#8F7434 !important;box-shadow:0 0 0 1px rgba(185,154,91,.5);}
+  .gu-nav a{border:none;background:rgba(168,195,138,.22);color:#4F6440;box-shadow:0 0 0 1px rgba(140,165,115,.3);border-radius:14px 17px 13px 17px;}
+  .gu-nav a.heilen-chip{background:rgba(217,182,92,.22);color:#8F7434;box-shadow:0 0 0 1px rgba(185,154,91,.4);}
+  .gu-nav a[href="#consult"]{background:radial-gradient(130% 130% at 25% 20%, #7FA167, #5E7D4E) !important;color:#FBF7EC !important;box-shadow:none;}
+  .pin-btn{border:none;background:#FFFEF8;box-shadow:0 0 0 1px rgba(176,152,102,.26);border-radius:13px 17px 13px 17px;}
+  .pin-body{border:none;background:#FDFAF0;box-shadow:0 0 0 1px rgba(176,152,102,.2);border-radius:0 0 15px 13px;}
+  .quote-band{
+    border:none;border-radius:16px 20px 15px 21px / 19px 15px 20px 16px;
+    background:
+      radial-gradient(70% 80% at 20% 100%, rgba(168,195,138,.35), transparent 65%),
+      radial-gradient(60% 70% at 85% 0%, rgba(143,179,207,.28), transparent 60%),
+      radial-gradient(20% 25% at 78% 18%, rgba(217,182,92,.4), transparent 70%),
+      #F6F1E0;
+  }
+  .coming{border:none;background:rgba(168,195,138,.14);box-shadow:0 0 0 1px rgba(140,165,115,.22);border-radius:17px 14px 18px 14px;}
+  .coming .city{border:none;background:rgba(217,182,92,.16);color:#8F7434;box-shadow:0 0 0 1px rgba(185,154,91,.3);border-radius:12px 15px 11px 15px;}
+  .consult-card{border:none;box-shadow:0 0 0 1.5px rgba(94,125,78,.4), 0 4px 14px rgba(94,125,78,.12);border-radius:17px 21px 16px 22px / 20px 16px 21px 17px;}
+  .opt span{border:none;background:rgba(168,195,138,.18);color:#4F6440;box-shadow:0 0 0 1px rgba(140,165,115,.28);border-radius:13px 16px 12px 16px;}
+  .opt input:checked + span{background:#5E7D4E;box-shadow:none;color:#FBF7EC;}
+  .f-input{border:none;box-shadow:0 0 0 1px rgba(176,152,102,.35);border-radius:12px 15px 12px 15px;background:#FFFEF8;}
+  .heilen-card{border:none;box-shadow:0 0 0 1.5px rgba(185,154,91,.5), 0 4px 14px rgba(160,130,60,.12);}
+  .not-medical{background:rgba(168,195,138,.25);color:#4F6440;}
+  footer{border-top:none;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 10" preserveAspectRatio="none"><path d="M3 5 C 60 2, 140 8, 217 4" stroke="%23C9B98E" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/></svg>') no-repeat top left / 100% 8px;padding-top:24px;}
+</style>
+</head>
+<body>
+
+<div class="test-ribbon">🔧 <b>테스트 버전</b> — 병원 검수 전 내부 확인용입니다. 외부 공개 금지</div>
+
+<div class="wrap">
+
+  <header class="hero art-hero">
+    <div class="art-frame">
+    <svg viewBox="0 0 400 290" width="100%" role="img" aria-label="달빛 아래 정원길을 따라 걷는 발걸음 수채화">
+      <defs>
+        <filter id="wc1"><feGaussianBlur stdDeviation="7"/></filter>
+        <filter id="wc2"><feGaussianBlur stdDeviation="3.5"/></filter>
+        <filter id="wc3"><feGaussianBlur stdDeviation="1.2"/></filter>
+      </defs>
+      <rect width="400" height="290" fill="#FBF7EC"/>
+      <!-- 하늘 워시 -->
+      <ellipse cx="200" cy="60" rx="230" ry="95" fill="#8FB3CF" opacity=".55" filter="url(#wc1)"/>
+      <ellipse cx="110" cy="35" rx="120" ry="55" fill="#5D87AC" opacity=".45" filter="url(#wc1)"/>
+      <ellipse cx="320" cy="45" rx="110" ry="60" fill="#7FA6C4" opacity=".5" filter="url(#wc1)"/>
+      <!-- 달 (골드) -->
+      <circle cx="330" cy="48" r="24" fill="#D9B65C" opacity=".9" filter="url(#wc2)"/>
+      <circle cx="322" cy="42" r="20" fill="#8FB3CF" opacity=".85" filter="url(#wc2)"/>
+      <!-- 별 -->
+      <g fill="#E3C878" opacity=".9">
+        <circle cx="60" cy="30" r="2.4"/><circle cx="130" cy="18" r="1.8"/><circle cx="180" cy="42" r="2.2"/>
+        <circle cx="245" cy="22" r="1.6"/><circle cx="285" cy="70" r="2"/><circle cx="95" cy="66" r="1.7"/>
+        <path d="M155 60 l3 6 6 1.5 -6 2 -2 6 -2.5 -6 -6 -1.5 6 -2 z" opacity=".85"/>
+        <path d="M225 50 l2.4 5 5 1.2 -5 1.7 -1.6 5 -2 -5 -5 -1.2 5 -1.7 z" opacity=".8"/>
+      </g>
+      <!-- 언덕 -->
+      <ellipse cx="90" cy="235" rx="220" ry="95" fill="#B9CD9C" opacity=".8" filter="url(#wc1)"/>
+      <ellipse cx="330" cy="255" rx="200" ry="90" fill="#9DBB82" opacity=".8" filter="url(#wc1)"/>
+      <ellipse cx="200" cy="290" rx="260" ry="70" fill="#C8D8AB" opacity=".9" filter="url(#wc1)"/>
+      <!-- 오솔길 (발걸음) -->
+      <path d="M40 290 C 90 240, 150 250, 200 215 S 290 170, 316 158" stroke="#FBF7EC" stroke-width="13" fill="none" opacity=".85" filter="url(#wc2)" stroke-linecap="round"/>
+      <g fill="#FFFFFF" opacity=".9" filter="url(#wc3)">
+        <ellipse cx="90" cy="262" rx="4" ry="2.4"/><ellipse cx="120" cy="250" rx="4" ry="2.4"/>
+        <ellipse cx="160" cy="238" rx="4" ry="2.4"/><ellipse cx="200" cy="220" rx="4" ry="2.4"/>
+        <ellipse cx="240" cy="200" rx="4" ry="2.4"/><ellipse cx="275" cy="180" rx="4" ry="2.4"/>
+      </g>
+      <!-- 집 (도착지) -->
+      <g filter="url(#wc3)">
+        <rect x="306" y="140" width="34" height="24" fill="#F3E9CF" stroke="#C9B98E" stroke-width="1"/>
+        <path d="M301 142 L323 124 L345 142 Z" fill="#B65B45" opacity=".9"/>
+        <rect x="318" y="150" width="9" height="14" fill="#8A6A2F" opacity=".8"/>
+        <circle cx="323" cy="118" r="3" fill="#D9B65C"/>
+      </g>
+      <!-- 나무 -->
+      <g opacity=".85" filter="url(#wc2)">
+        <ellipse cx="58" cy="196" rx="16" ry="20" fill="#5E7D4E"/>
+        <rect x="55" y="210" width="5" height="16" fill="#6B5432"/>
+        <ellipse cx="368" cy="196" rx="13" ry="17" fill="#6B8A58"/>
+        <rect x="366" y="208" width="4" height="14" fill="#6B5432"/>
+      </g>
+      <!-- 걷는 두 사람 (모녀) -->
+      <g fill="#4A4030" opacity=".85" filter="url(#wc3)">
+        <circle cx="212" cy="204" r="4"/><path d="M208 208 q4 10 8 0 l-2 14 h-4 z"/>
+        <circle cx="224" cy="207" r="3"/><path d="M221 210 q3 8 6 0 l-1.5 11 h-3 z"/>
+      </g>
+    </svg>
+    </div>
+    <div class="logo">어디요양 <span class="region">전남광주</span></div>
+    <h1 class="h1">부모님 요양병원,<br>어디로 모실지 막막할 때</h1>
+    <p class="hero-sub">우리 동네 요양병원을 한눈에 확인하고,<br>한 번의 요청으로 상담까지 연결됩니다.</p>
+    <div class="hero-cta">
+      <a href="#consult" class="cta-main">모아서 상담 요청</a>
+      <a href="#gwangsan" class="cta-sub">동네 병원 먼저 보기</a>
+    </div>
+    <div class="trust-row"><span>의료기관 아님</span><span>직접 확인한 정보만</span><span>이용 무료</span></div>
+  </header>
+
+  <nav class="gu-nav">
+    <a href="#gwangsan">광산구</a>
+    <a href="#namgu">남구</a>
+    <a href="#donggu">동구</a>
+    <a href="#bukgu">북구</a>
+    <a href="#seogu">서구</a>
+    <a href="#heilen" class="heilen-chip">암 회복은 여기</a>
+    <a href="#consult" style="background:var(--brand);color:#fff;border-color:var(--brand);">모아서 상담</a>
+  </nav>
+
+  <div class="pinned">
+    <button class="pin-btn" onclick="toggle(this,'g0')">🌱 좋은 요양병원, 어떻게 알아볼까요?<span class="arrow">›</span></button>
+    <div class="pin-body" id="g0">
+      <h4>① 자주 갈 수 있는 거리인지 보세요</h4>
+      <p>부모님은 하루아침에 가꿔지는 정원이 아닙니다. 차로 20~30분 안쪽이면 계절에 한 번이 아니라 주마다 얼굴을 뵐 수 있고, 가족의 눈이 자주 닿는 병원은 그만큼 긴장을 유지합니다.</p>
+      <h4>② 의료진·간병하시는 분들과 이야기를 나눠보세요</h4>
+      <p>문의할 때 회진 방식, 간병 구조(공동·개인), 보호자 연락 방법을 물어보면 병원의 결이 보입니다. 부모님을 함께 돌보는 분들의 이름을 아는 것부터가 돌봄의 시작입니다.</p>
+      <h4>③ 면회 시간과 방법을 확인하세요</h4>
+      <p>자주 뵙는 가족의 눈이 부모님의 작은 변화를 가장 먼저 알아챕니다. 면회가 편한 병원인지, 방문 전 무엇을 준비하면 되는지 미리 확인해 두세요.</p>
+      <p style="margin-top:10px;color:#2F6B4F;font-weight:700;">가까운 곳에서, 자주 뵙는 것 — 그것이 돌봄의 절반입니다.</p>
+    </div>
+
+    <button class="pin-btn" onclick="toggle(this,'g1')">✅ 전화·방문 상담 때 꼭 확인할 7가지<span class="arrow">›</span></button>
+    <div class="pin-body" id="g1">
+      <h4>① 의료진</h4><p>어떤 과 전문의가 상주하는지 물어보세요. 부모님 질환(치매·뇌졸중·내과 질환 등)과 맞는 과가 있는 것이 먼저입니다.</p>
+      <h4>② 간호</h4><p>24시간 간호 인력이 병동에 상주하는지 — 야간 상황 대응의 기준입니다.</p>
+      <h4>③ 간병</h4><p>공동간병이면 몇 대 몇인지, 월 간병비는 얼마인지, 개인간병은 어떻게 연결되는지 확인하세요.</p>
+      <h4>④ 치료 횟수</h4><p>물리·운동치료가 실제로 주 몇 회, 1회 몇 분인지 구체적으로 물어보세요. "치료 있어요"와 "주 5회 30분"은 다릅니다.</p>
+      <h4>⑤ 대응 범위</h4><p>콧줄(비위관)·석션·욕창 관리·치매 문제행동(배회·야간 소란)을 어디까지 받아주는지 — 입원 후 갈등을 막는 질문입니다.</p>
+      <h4>⑥ 면회·접근</h4><p>면회 시간과 방식, 주차·대중교통을 확인하세요. 자주 가게 되는 조건입니다.</p>
+      <h4>⑦ 비용</h4><p>병실료+간병비+비급여를 합친 월 예상 구간으로 물어보세요. 항목별로 따로 들으면 감이 안 잡힙니다.</p>
+    </div>
+
+    <button class="pin-btn" onclick="toggle(this,'g2')">📞 문의 전 준비하면 좋은 3가지<span class="arrow">›</span></button>
+    <div class="pin-body" id="g2">
+      <h4>① 환자 상태 메모</h4><p>진단명, 최근 입원·수술 이력, 거동 가능 여부, 식사 방법(일반식·죽·콧줄)을 한 줄씩 적어두세요.</p>
+      <h4>② 복용 약 목록</h4><p>드시는 약 봉투나 처방전 사진 한 장이면 충분합니다.</p>
+      <h4>③ 간병 형태 생각해 두기</h4><p>가족이 상주할지, 공동간병·개인간병이 필요할지 미리 생각해 두시면 문의가 빨라집니다.</p>
+    </div>
+  </div>
+
+  <!-- 광산구 -->
+  <div class="gu" id="gwangsan">
+    <div class="gu-head"><svg viewBox="0 0 30 30" width="30" height="30" style="flex:none;margin-right:2px;"><defs><filter id="mb"><feGaussianBlur stdDeviation="0.7"/></filter></defs><ellipse cx="15" cy="12" rx="9" ry="10" fill="#5E7D4E" opacity=".8" filter="url(#mb)"/><rect x="13.4" y="18" width="3.2" height="9" fill="#6B5432" opacity=".85"/></svg><span class="gu-name">광산구</span><span class="gu-desc">전남광주</span></div>
+    <div class="card">
+      <div class="h-name">자연요양병원</div>
+      <div class="h-addr">광산구 목련로 330-19 (신가동)</div>
+      <div class="h-meta">
+        <span class="chip">요양원 함께 운영</span><span class="chip">요양병원 적정성평가 1등급</span><span class="chip">노인전문</span>
+        <br>치매·파킨슨 등 노인성 질환 어르신을 돌보는 노인전문 요양병원입니다. 같은 울타리에서 요양원을 함께 운영해 어르신 상태 변화에 따라 생활을 이어갈 수 있고, 물리치료와 교육·사회복지 프로그램을 운영합니다.
+        <br><span class="todo">간병 형태·비용 병원 확인 중</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-call" href="tel:062-955-9200">전화 문의</a>
+        <a class="btn btn-place" href="https://naver.me/xJiKnnd1" target="_blank">네이버에서 보기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 남구 -->
+  <div class="gu" id="namgu">
+    <div class="gu-head"><svg viewBox="0 0 30 30" width="30" height="30" style="flex:none;margin-right:2px;"><defs><filter id="mb"><feGaussianBlur stdDeviation="0.7"/></filter></defs><g filter="url(#mb)"><circle cx="15" cy="11" r="4.5" fill="#D98A7E" opacity=".85"/><circle cx="9" cy="16" r="4" fill="#E2A79B" opacity=".75"/><circle cx="21" cy="16" r="4" fill="#C9766B" opacity=".75"/><circle cx="15" cy="15" r="2.2" fill="#D9B65C"/><path d="M15 19 q-1 6 -2 9" stroke="#5E7D4E" stroke-width="1.6" fill="none"/></g></svg><span class="gu-name">남구</span><span class="gu-desc">전남광주</span></div>
+    <div class="card">
+      <div class="h-name">효다움요양병원</div>
+      <div class="h-addr">남구 송암로98번길 36-10 (송하동)</div>
+      <div class="h-meta">
+        <span class="chip">217병상</span><span class="chip">24시간 간호 인력 상주</span><span class="chip">2012년 개원</span>
+        <br>치매·파킨슨·뇌졸중 어르신과 수술 후 회복, 거동이 불편한 어르신을 돌봅니다. 간병을 어르신 상태 기준으로 <b>공동·밀착·개인</b> 세 단계로 나눠 맞추는 것이 이 병원의 방식이며, 물리치료·운동치료를 운영합니다.
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-call" href="tel:062-670-3847">전화 문의</a>
+        <a class="btn btn-place" href="https://naver.me/FsRpUXOW" target="_blank">네이버에서 보기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 동구 -->
+  <div class="gu" id="donggu">
+    <div class="gu-head"><svg viewBox="0 0 30 30" width="30" height="30" style="flex:none;margin-right:2px;"><defs><filter id="mb"><feGaussianBlur stdDeviation="0.7"/></filter></defs><g filter="url(#mb)"><circle cx="15" cy="17" r="7.5" fill="#D9B65C" opacity=".9"/><path d="M15 4 v4 M4 17 h4 M22 17 h4 M7 8 l3 3 M23 8 l-3 3" stroke="#D9B65C" stroke-width="2" stroke-linecap="round" opacity=".8"/></g></svg><span class="gu-name">동구</span><span class="gu-desc">전남광주</span></div>
+    <div class="card pending">
+      <div class="pending-label">정보 게재 준비 중</div>
+      <div class="h-name">강남요양병원</div>
+      <div class="h-addr">동구 남문로 622 (소태동)</div>
+      <div class="h-meta">
+        <span class="chip">동구</span>
+        <br>동구 지역의 요양병원입니다. <span class="todo">운영 정보 병원 확인 중</span>
+        <br>대표 062-601-9000
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-place" href="https://naver.me/FEUpUKUk" target="_blank">네이버에서 보기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 북구 -->
+  <div class="gu" id="bukgu">
+    <div class="gu-head"><svg viewBox="0 0 30 30" width="30" height="30" style="flex:none;margin-right:2px;"><defs><filter id="mb"><feGaussianBlur stdDeviation="0.7"/></filter></defs><g filter="url(#mb)" fill="none" stroke="#4A6B8A" stroke-width="2" stroke-linecap="round"><path d="M5 16 q5 -7 10 0"/><path d="M15 16 q5 -7 10 0"/><path d="M9 22 q4 -5 8 0" opacity=".65"/></g></svg><span class="gu-name">북구</span><span class="gu-desc">전남광주</span></div>
+    <div class="card pending">
+      <div class="pending-label">정보 게재 준비 중</div>
+      <div class="h-name">동행요양병원</div>
+      <div class="h-addr">북구 무등로 226 (신안동) · 광주역 인근</div>
+      <div class="h-meta">
+        <span class="chip">약 400병상</span><span class="chip">양방+한방 진료</span><span class="chip">주차 50대 무료</span>
+        <br>물리치료사 25명·작업치료사 16명이 근무하는 재활 인력 규모가 특징입니다. 뇌졸중 후 편마비·치매 어르신의 장기 입원과 치료를 병행하며, 공동·개인 간병을 운영합니다. 광주역 도보권이라 타지역 가족의 면회가 편합니다.
+        <br>대표 062-720-2000 (평일 09~17시 접수) <span class="todo">간병 비율·비용 병원 확인 중</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-place" href="https://naver.me/FoEUkbpL" target="_blank">네이버에서 보기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 서구 -->
+  <div class="gu" id="seogu">
+    <div class="gu-head"><svg viewBox="0 0 30 30" width="30" height="30" style="flex:none;margin-right:2px;"><defs><filter id="mb"><feGaussianBlur stdDeviation="0.7"/></filter></defs><g filter="url(#mb)"><ellipse cx="11" cy="21" rx="9" ry="6" fill="#9DBB82" opacity=".85"/><ellipse cx="21" cy="22" rx="8" ry="5" fill="#B9CD9C" opacity=".85"/><ellipse cx="20" cy="9" rx="6" ry="3.4" fill="#C9D9E6" opacity=".9"/></g></svg><span class="gu-name">서구</span><span class="gu-desc">전남광주</span></div>
+    <div class="card">
+      <div class="h-meta" style="margin-top:0;">
+        서구의 노인요양병원 정보를 준비하고 있습니다.
+        <br>암 수술·항암 회복이 필요하시다면 아래 <a href="#heilen" style="color:var(--heilen);font-weight:700;">암 회복 안내</a>를 확인하세요.
+      </div>
+    </div>
+  </div>
+
+  <!-- 하일렌: 전 지역 암 회복 -->
+  <div class="heilen-sec" id="heilen">
+    <div class="heilen-head">
+      <div style="margin-bottom:6px;"><svg viewBox="0 0 30 30" width="34" height="34" style="flex:none;margin-right:2px;"><defs><filter id="mb"><feGaussianBlur stdDeviation="0.7"/></filter></defs><g filter="url(#mb)"><circle cx="16" cy="15" r="9" fill="#D9B65C" opacity=".9"/><circle cx="13" cy="12.5" r="7.5" fill="#FBF7EC"/> <circle cx="24" cy="6" r="1.5" fill="#D9B65C"/><circle cx="6" cy="9" r="1.2" fill="#D9B65C"/></g></svg></div><h2>암 진단을 받으셨다면 — 전남광주 어디서든</h2>
+      <p>암 치료 전후의 회복은 노인요양과 다른 길입니다.<br>구에 관계없이, 전 지역에서 안내하는 병원입니다.</p>
+    </div>
+    <div class="heilen-card">
+      <div class="h-name">암중점 메디컬레지던스 하일렌요양병원</div>
+      <div class="h-addr">서구 상무대로 1176 (농성동) · 돌고개역 3번 출구 · 2021년 개원</div>
+      <div class="h-meta">
+        <span class="chip">암중점 회복 설계</span><span class="chip">단기·주말 입원</span><span class="chip">외래 회복 프로그램</span><span class="chip">맞춤 식단</span>
+        <br>암 수술·항암·방사선 치료 전후의 회복 기간을 치료 일정에 맞춰 설계하는 암중점 요양병원입니다. 고주파온열·산소·도수·림프·통증 관리와 면역주사 등 회복 프로그램을 운영하고, 항암식·일반식을 구분한 맞춤 식단을 제공합니다. 치료 일정에 맞춘 단기·주말 입원과 외래 통원, 항암 통원 픽업까지 안내합니다.
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-call" href="tel:062-439-1000">전화 문의</a>
+        <a class="btn btn-place" href="https://naver.me/G7VuDuwM" target="_blank">네이버에서 보기</a>
       </div>
       <div class="heilen-note">위의 지역별 병원에 문의하셨더라도, 환자분이 암 치료 중이라면 이곳에서 다시 안내받으실 수 있습니다 — 어디요양이 지역 안내와 별도로 전남광주 전체에서 연결하는 암 회복 트랙입니다.</div>
     </div>
