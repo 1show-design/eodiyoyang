@@ -430,6 +430,7 @@
       <div class="btn-row">
         <a class="btn btn-call" href="tel:062-955-9200">전화 문의</a>
         <a class="btn btn-place" href="https://naver.me/xJiKnnd1" target="_blank">네이버에서 보기</a>
+        <a class="btn btn-place" href="jayeon.html">자세한 정보</a>
       </div>
     </div>
   </div>
@@ -447,6 +448,7 @@
       <div class="btn-row">
         <a class="btn btn-call" href="tel:062-670-3847">전화 문의</a>
         <a class="btn btn-place" href="https://naver.me/FsRpUXOW" target="_blank">네이버에서 보기</a>
+        <a class="btn btn-place" href="hyodaum.html">자세한 정보</a>
       </div>
     </div>
   </div>
@@ -632,7 +634,7 @@ document.addEventListener('click', function(e){
   var hosp = nameEl ? nameEl.textContent.trim() : '공통';
   var href = a.getAttribute('href') || '';
   var action = href.indexOf('tel:') === 0 ? 'call_click'
-             : href.indexOf('inpock') > -1 ? 'detail_click'
+             : (href.indexOf('inpock') > -1 || href === 'jayeon.html' || href === 'hyodaum.html') ? 'detail_click'
              : href.indexOf('naver') > -1 ? 'place_click'
              : 'nav_click';
   gtag('event', action, { hospital: hosp, link_label: a.textContent.trim(), link_url: href });
@@ -640,6 +642,7 @@ document.addEventListener('click', function(e){
 </script>
 </body>
 </html>
+
 
 
 
