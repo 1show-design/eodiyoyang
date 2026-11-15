@@ -94,6 +94,18 @@ footer{padding-block:2rem;color:var(--sub);font-size:.8rem}
   .rules{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:480px){.tag{display:none}}
+/* 떠 있는 연락 단추: 화면 오른쪽 아래에 늘 보입니다. */
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:50;display:flex;flex-direction:column;gap:.6rem;align-items:flex-end}
+.fab a{display:flex;align-items:center;gap:.55rem;height:52px;padding:0 1.1rem 0 .95rem;border-radius:26px;color:#fff;text-decoration:none;font:500 .95rem/1 var(--f-body);box-shadow:0 6px 18px rgba(20,30,45,.22);transition:transform .15s}
+.fab a:hover{transform:translateY(-2px)}
+.fab a:focus-visible{outline:3px solid var(--eave);outline-offset:3px}
+.fab svg{width:22px;height:22px;flex:none}
+.fab .call{background:var(--medical)}
+.fab .sms{background:var(--eave)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fab a{color:#0E141B}}
+:root[data-theme="dark"] .fab a{color:#0E141B}
+.contact a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+footer{padding-bottom:9rem}
 </style>
 </head>
 <body>
@@ -278,12 +290,17 @@ footer{padding-block:2rem;color:var(--sub);font-size:.8rem}
   </div>
   <dl class="contact">
     <div><dt>대표</dt><dd>다니엘 문</dd></div>
-    <div><dt>메일</dt><dd>1000show@gmail.com</dd></div>
-    <div><dt>휴대전화</dt><dd>010.5518.9632</dd></div>  </dl>
+    <div><dt>메일</dt><dd><a href="mailto:1000show@gmail.com">1000show@gmail.com</a></dd></div>
+    <div><dt>휴대전화</dt><dd><a href="tel:010-5518-9632">010.5518.9632</a></dd></div>  </dl>
 </div></section>
 </main>
 
 <footer><div class="wrap">어디메디컬 · MEDICAL BRAND PARTNER</div></footer>
+
+<nav class="fab" aria-label="바로 연락">
+  <a class="call" href="tel:010-5518-9632" aria-label="전화 걸기 010-5518-9632"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
+  <a class="sms" href="sms:01055189632" aria-label="문자 보내기 010-5518-9632"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>문자</a>
+</nav>
 
 </body>
 </html>
